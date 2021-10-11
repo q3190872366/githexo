@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="SL">
+  <meta name="keywords" content="">
+  <meta name="description" content="C语言第四天三、字符型常量续  \是转义字符的标志  所以 \ \ 输出 \  用一个斜杠后面加一个字符或若干个符号代表一个字符 加一个 \  把意思变了这就叫转义字符 上面没有带单引号，应该要加单引号 ‘ \n ‘ \ t (这是tab)  \ddd  d代表数字   后面可以有1-3位八进制数  \xhh  \x 表示后面跟的是十六进制数，可以有一位或者是两位（如果出现a b也是对的，因为十六">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言第四天">
+<meta property="og:url" content="http://example.com/2021/10/11/4/index.html">
+<meta property="og:site_name" content="番水">
+<meta property="og:description" content="C语言第四天三、字符型常量续  \是转义字符的标志  所以 \ \ 输出 \  用一个斜杠后面加一个字符或若干个符号代表一个字符 加一个 \  把意思变了这就叫转义字符 上面没有带单引号，应该要加单引号 ‘ \n ‘ \ t (这是tab)  \ddd  d代表数字   后面可以有1-3位八进制数  \xhh  \x 表示后面跟的是十六进制数，可以有一位或者是两位（如果出现a b也是对的，因为十六">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://imgblogslp.test.upcdn.net//picgo/20210928224122.png">
+<meta property="og:image" content="http://imgblogslp.test.upcdn.net//picgo/20210928230004.png">
+<meta property="og:image" content="http://imgblogslp.test.upcdn.net//picgo/20210928230819.png">
+<meta property="og:image" content="http://imgblogslp.test.upcdn.net//picgo/20210928232452.png">
+<meta property="og:image" content="http://imgblogslp.test.upcdn.net//picgo/20210928233014.png">
+<meta property="og:image" content="http://imgblogslp.test.upcdn.net//picgo/20210928233052.png">
+<meta property="og:image" content="http://imgblogslp.test.upcdn.net//picgo/20210928233149.png">
+<meta property="og:image" content="http://imgblogslp.test.upcdn.net//picgo/20210928233356.png">
+<meta property="og:image" content="http://imgblogslp.test.upcdn.net//picgo/20210928233553.png">
+<meta property="og:image" content="http://imgblogslp.test.upcdn.net//picgo/20210928233707.png">
+<meta property="og:image" content="http://imgblogslp.test.upcdn.net//picgo/20210928233900.png">
+<meta property="og:image" content="http://imgblogslp.test.upcdn.net//picgo/20210928234028.png">
+<meta property="og:image" content="http://imgblogslp.test.upcdn.net//picgo/20210928234332.png">
+<meta property="article:published_time" content="2021-10-11T14:13:34.598Z">
+<meta property="article:modified_time" content="2021-10-11T05:29:37.102Z">
+<meta property="article:author" content="SL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://imgblogslp.test.upcdn.net//picgo/20210928224122.png">
+  
+  <title>C语言第四天 - 番水</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="C语言第四天">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-10-11 22:13" pubdate>
+        2021年10月11日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      undefined 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      NaN 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">C语言第四天</h1>
+            
+            <div class="markdown-body">
+              <h1 id="C语言第四天"><a href="#C语言第四天" class="headerlink" title="C语言第四天"></a>C语言第四天</h1><h2 id="三、字符型常量续"><a href="#三、字符型常量续" class="headerlink" title="三、字符型常量续"></a>三、字符型常量续</h2><p><img src="http://imgblogslp.test.upcdn.net//picgo/20210928224122.png" srcset="/img/loading.gif" lazyload alt="image-20210928224122116"></p>
+<blockquote>
+<p>\是转义字符的标志  所以 \ \ 输出 \ </p>
+<p>用一个斜杠后面加一个字符或若干个符号代表一个字符</p>
+<p>加一个 \  把意思变了这就叫转义字符</p>
+<p>上面没有带单引号，应该要加单引号 ‘ \n ‘</p>
+<p>\ t (这是tab) </p>
+<p>\ddd  d代表数字   后面可以有1-3位八进制数 </p>
+<p>\xhh  \x 表示后面跟的是十六进制数，可以有一位或者是两位（如果出现a b也是对的，因为十六进制有这些）</p>
+<p>补：’\a’或’\7’响铃       ‘\ \ \ \ ‘ 四个\输出 两个\ \     ‘\ \ \’出错</p>
+<p>  ‘ \ { ‘ 输出{                   ‘\k’输出k</p>
+<p><a href="">\后面必须有内容，不允许单独出现，即 ‘ \ ’ 就是错误的。</a></p>
+<p><a href="">奇数 \ 会出错  ‘\ \ \’</a> </p>
+</blockquote>
+<p><img src="http://imgblogslp.test.upcdn.net//picgo/20210928230004.png" srcset="/img/loading.gif" lazyload alt="image-20210928230004045"></p>
+<blockquote>
+<p><a href="">怎么变成A的不懂</a></p>
+</blockquote>
+<h2 id="四、字符串常量"><a href="#四、字符串常量" class="headerlink" title="四、字符串常量"></a>四、字符串常量</h2><p><img src="http://imgblogslp.test.upcdn.net//picgo/20210928230819.png" srcset="/img/loading.gif" lazyload alt="image-20210928230819182"></p>
+<blockquote>
+<p>是否是字符串常量是看是单引号还是双引号，不看里面个数多少</p>
+<p>双引号就是字符串常量</p>
+<p>单引号就是字符型常量</p>
+<p>注意：区别分析 “a” 和 ‘a’ </p>
+<ol>
+<li><p><a href="">一个是字符串常量一个是字符型常量</a></p>
+</li>
+<li><p><a href="">单引号a内存中占1、双引号a内存中占2</a></p>
+<p>其实“a”=‘a’+‘\0’  <a href="">（任何字符串末尾都有‘\0’，不过通常不写）</a></p>
+<p>所以双引号a内存中占2</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="五、符号常量"><a href="#五、符号常量" class="headerlink" title="五、符号常量"></a>五、符号常量</h2><blockquote>
+<p>#define  符号常量  常量</p>
+<p>补：#define  PI   3.14  （定义PI是3.14）</p>
+<p>​        #define  M   10</p>
+<p>这种方式也称为宏定义：这里的PI和M叫做宏名，<a href="">一般</a>用大写字母表示，小写也没错。</p>
+</blockquote>
+<p><a href="">思考：有符号数与无符号数的区别？熟练掌握原码、反码、补码的表示方式？</a></p>
+<h2 id="六、const常量（长变量、只读变量）"><a href="#六、const常量（长变量、只读变量）" class="headerlink" title="六、const常量（长变量、只读变量）"></a>六、const常量（长变量、只读变量）</h2><p><img src="http://imgblogslp.test.upcdn.net//picgo/20210928232452.png" srcset="/img/loading.gif" lazyload alt="image-20210928232452104"></p>
+<h2 id="七、枚举类型"><a href="#七、枚举类型" class="headerlink" title="七、枚举类型"></a>七、枚举类型</h2><p><img src="http://imgblogslp.test.upcdn.net//picgo/20210928233014.png" srcset="/img/loading.gif" lazyload alt="image-20210928233014572"></p>
+<p><img src="http://imgblogslp.test.upcdn.net//picgo/20210928233052.png" srcset="/img/loading.gif" lazyload alt="image-20210928233052666"></p>
+<p><img src="http://imgblogslp.test.upcdn.net//picgo/20210928233149.png" srcset="/img/loading.gif" lazyload alt="image-20210928233149183"></p>
+<p><img src="http://imgblogslp.test.upcdn.net//picgo/20210928233356.png" srcset="/img/loading.gif" lazyload alt="image-20210928233356929"></p>
+<blockquote>
+<p>枚举元素只能是符号，不能是1 、2 、3，也不能是字符串</p>
+<p>其值只能是整数，不能是1.5</p>
+</blockquote>
+<p><img src="http://imgblogslp.test.upcdn.net//picgo/20210928233553.png" srcset="/img/loading.gif" lazyload alt="image-20210928233553525"></p>
+<p><img src="http://imgblogslp.test.upcdn.net//picgo/20210928233707.png" srcset="/img/loading.gif" lazyload alt="image-20210928233707564"></p>
+<p><img src="http://imgblogslp.test.upcdn.net//picgo/20210928233900.png" srcset="/img/loading.gif" lazyload alt="image-20210928233900665"></p>
+<p><img src="http://imgblogslp.test.upcdn.net//picgo/20210928234028.png" srcset="/img/loading.gif" lazyload alt="image-20210928234028040"></p>
+<p><a href="">printf(“%d”,a);%d就是输出的时候的占位符，占a的位 表示以十进制整数形式输出a</a></p>
+<p><img src="http://imgblogslp.test.upcdn.net//picgo/20210928234332.png" srcset="/img/loading.gif" lazyload alt="image-20210928234332643"></p>
+<h2 id="二、变量"><a href="#二、变量" class="headerlink" title="二、变量"></a>二、变量</h2>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/10/11/hello-world1/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/10/11/3/">
+                        <span class="hidden-mobile">C语言第三天</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
