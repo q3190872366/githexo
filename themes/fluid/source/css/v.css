@@ -14,3 +14,8 @@ psw:hover {
 [data-user-color-scheme='dark'] .markdown-body psw:hover {
   color: #babdc0;
   background: none;
+
+[data-user-color-scheme='dark'] .markdown-body :not(pre) > code {
+  background-color: rgba(62,75,94,1) ;
+  transition: background-color 0.2s ease-in-out ;
+}
