@@ -2,8 +2,7 @@
 title: 密码样式英语
 categories: hexo
 tags: hexo
-index_img: https://cdn.jsdelivr.net/gh/q3190872366/img/20211012002625.png
-
+index_img: http://cpblog.cn/api/img/api.php
 
 ---
 

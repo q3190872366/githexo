@@ -2,7 +2,7 @@
 title: 英语背单词
 categories: 英语
 tags: 背单词
-index_img: https://cdn.jsdelivr.net/gh/q3190872366/img/20211011225857.jpg
+index_img: http://cpblog.cn/api/img/api.php
 ---
 
 没人推荐excel吗？。。我当时上GRE课的时候老师教的一个方法，我觉得很实用。

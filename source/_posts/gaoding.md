@@ -2,8 +2,7 @@
 title: 如何去搞定设计水印
 categories: 设计
 tags: 设计
-index_img: https://cdn.jsdelivr.net/gh/q3190872366/img/20211012002625.png
-
+index_img: http://cpblog.cn/api/img/api.php
 ---
 
 F12 找到editor-watermark
