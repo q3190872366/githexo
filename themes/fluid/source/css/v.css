@@ -1,3 +1,9 @@
+.markdown-body table {
+    display: table !important ;
+    width: 100% !important ;
+    overflow: auto !important ;
+}
+
 psw {
   color: transparent;
   background: #a1a1a1;
@@ -38,3 +44,6 @@ em:hover {
 [data-user-color-scheme='dark'] .markdown-body em:hover {
   color: #babdc0;
   background: none;
+
+
+
