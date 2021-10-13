@@ -14,8 +14,27 @@ psw:hover {
 [data-user-color-scheme='dark'] .markdown-body psw:hover {
   color: #babdc0;
   background: none;
+}
 
 [data-user-color-scheme='dark'] .markdown-body :not(pre) > code {
   background-color: rgba(62,75,94,1) ;
   transition: background-color 0.2s ease-in-out ;
 }
+
+em {
+  font-style:normal;
+  color: transparent;
+  background: #a1a1a1;
+  border-radius: 2px;
+  transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+}
+em:hover {
+  color: #444;
+  background: none;
+}
+[data-user-color-scheme='dark'] .markdown-body em:hover {
+  color: #babdc0;
+  background: none;
