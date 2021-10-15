@@ -9,3 +9,4 @@ F12 找到editor-watermark
 
 然后改![image-20211012002928754](https://cdn.jsdelivr.net/gh/q3190872366/img/20211012002928.png)
 
+image-watermark 千图网
